@@ -21,10 +21,6 @@ export const createCategory = (appElem) => {
         });
         item.dataset.id = data.id;
 
-        /*
-         * Написать функционал создания html карточки
-         */
-
         const cardBtn = createElement('button', {
             className: 'category__card',
         });
@@ -44,17 +40,14 @@ export const createCategory = (appElem) => {
         const cardBtnEdit = createElement ('button', {
             className: 'category__btn category__edit',
             ariaLabel: 'редактировать',
-            //alt: 'редактировать',//
         });
 
         const cardBtnDel = createElement ('button', {
             className: 'category__btn category__del',
-            //alt: 'удалить',//
+            ariaLabel: 'удалить',
         });
 
         item.append(cardBtn, cardBtnEdit, cardBtnDel);
-
-        //до сюда
 
         return item;
     }
