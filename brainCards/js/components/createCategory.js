@@ -18,15 +18,43 @@ export const createCategory = (appElem) => {
     const createCategoryCard = (data) => {
         const item = createElement('li', {
             className: 'category__item',
-
-            textContent: data.title, // убрать
-
         });
         item.dataset.id = data.id;
 
         /*
-         * Написать функционал создания html карточки 
+         * Написать функционал создания html карточки
          */
+
+        const cardBtn = createElement('button', {
+            className: 'category__card',
+        });
+
+        const cardTitle = createElement('span', {
+            className: 'category__title',
+            textContent: data.title,
+        });
+
+        const cardPairs = createElement('span', {
+            className: 'category__pairs',
+            textContent: data.length,
+        });
+
+        cardBtn.append(cardTitle, cardPairs);
+
+        const cardBtnEdit = createElement ('button', {
+            className: 'category__btn category__edit',
+            ariaLabel: 'редактировать',
+            //alt: 'редактировать',//
+        });
+
+        const cardBtnDel = createElement ('button', {
+            className: 'category__btn category__del',
+            //alt: 'удалить',//
+        });
+
+        item.append(cardBtn, cardBtnEdit, cardBtnDel);
+
+        //до сюда
 
         return item;
     }
