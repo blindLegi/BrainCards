@@ -1,4 +1,5 @@
 import { createElement } from "../helper/createElement.js"
+import { declOfNum } from "../helper/declOfNum.js";
 
 export const createCategory = (appElem) => {
     const category = createElement('section', {
@@ -32,7 +33,7 @@ export const createCategory = (appElem) => {
 
         const cardPairs = createElement('span', {
             className: 'category__pairs',
-            textContent: data.length,
+            textContent: declOfNum(data.length, ['пара','пары','пар']),
         });
 
         cardBtn.append(cardTitle, cardPairs);
