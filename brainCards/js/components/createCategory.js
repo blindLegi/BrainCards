@@ -57,9 +57,9 @@ export const createCategory = (appElem) => {
 
     const mount = (data) => {
         category__list.textContent = '';
-        appElem.append(category);
         const cards = data.map(createCategoryCard);
         category__list.append(...cards);
+        appElem.append(category);
     }
 
     const unmount = () => {

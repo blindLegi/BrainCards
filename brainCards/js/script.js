@@ -36,7 +36,9 @@ const initApp = async () => {
     headerObj.headerLogoLink.addEventListener('click', renderIndex);
 
     headerObj.headerBtn.addEventListener('click', () => {
+        allSectionUnmount();
         headerObj.updateHeaderTitle('Новая категория');
+        editCategoryObj.mount();
     });
 };
 
